@@ -12,7 +12,8 @@ body {
   z-index: 5;
   width: 100%;
   height: 50px;
-  .light{
+
+  .light {
   }
 
   &__container {
@@ -84,15 +85,18 @@ body {
       height: 40px;
       margin-top: 5px;
     }
-    &-bell{
+
+    &-bell {
       padding: 15px 20px;
       margin-left: 20px;
       cursor: pointer;
-      &:hover{
+
+      &:hover {
         background: $mainColor;
         transition: all 0.3s ease 0s;
       }
-      svg{
+
+      svg {
         vertical-align: middle;
         display: inline-flex;
         justify-content: center;
@@ -100,37 +104,43 @@ body {
         color: white;
       }
     }
-    &-user{
+
+    &-user {
       display: flex;
       flex-basis: 50%;
       justify-content: flex-end;
-      span{
+
+      span {
         padding: 18px 15px 0 0;
         font-weight: bold;
         font-size: 12px;
         color: white;
         font-family: $font;
       }
-      img{
+
+      img {
         width: 32px;
         height: 32px;
         background: center center/cover;
         border-radius: 50%;
         margin: 10px 0;
       }
-      &-svg{
+
+      &-svg {
         justify-content: center;
         align-items: center;
         margin-left: 10px;
         color: white;
         cursor: pointer;
         display: inline-flex;
-        svg{
+
+        svg {
           vertical-align: middle;
           display: inline-block;
         }
       }
-      &-reverseSvg{
+
+      &-reverseSvg {
         justify-content: center;
         align-items: center;
         margin-left: 10px;
@@ -138,7 +148,8 @@ body {
         cursor: pointer;
         display: inline-flex;
         transform: rotate(180deg);
-        svg{
+
+        svg {
           vertical-align: middle;
           display: inline-block;
         }
@@ -148,9 +159,10 @@ body {
 }
 
 //DARK MODE
-.switch{
+.switch {
   margin-left: 15px;
 }
+
 #darkMode {
   filter: grayscale(100%);
   border: none;
@@ -166,20 +178,24 @@ body {
 #darkMode.clicked {
   filter: none !important;
 }
+
 :root {
   --dark: rgb(35, 42, 48);
   --white: rgb(236, 236, 236);
 }
+
 body.light {
   --background-color: var(--white);
   --text-color: var(--dark);
   --font-weight: 400;
 }
+
 body.dark {
   --background-color: var(--dark);
   --text-color: var(--white);
   --font-weight: 500;
 }
+
 body {
   background: var(--background-color);
   color: var(--text-color);
@@ -187,9 +203,10 @@ body {
   transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
 }
 
-.Icon{
+.Icon {
   display: flex;
 }
+
 // END DARK MODE
 
 //END HEADER
@@ -197,40 +214,47 @@ body {
 
 //HOME PAGE
 
-.Home{
+.Home {
   max-width: 990px;
   margin: 0 auto;
   overflow: hidden;
   display: flex;
   padding: 60px 0;
-  &__wrapper{
+
+  &__wrapper {
     display: flex;
     width: 100%;
     padding: 0 15px;
   }
-  &__menu{
+
+  &__menu {
     width: 17%;
   }
-  &__content{
+
+  &__content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     width: 83%;
     animation: 0.6s ease-in-out 0s 1 normal none running top;
-    &-left{
+
+    &-left {
       width: 30%;
-      &-avatarWrapper{
+
+      &-avatarWrapper {
         background: white;
         padding: 15px;
         margin: 10px 10px 10px 0;
         border-radius: 3px;
-        box-shadow: rgb(215,216, 219) 0 1px 0 0, rgb(227, 228, 232) 0 0 0 1px;
+        box-shadow: rgb(215, 216, 219) 0 1px 0 0, rgb(227, 228, 232) 0 0 0 1px;
       }
-      &-under{
+
+      &-under {
         margin-top: 20px;
         display: flex;
         justify-content: space-between;
-        button{
+
+        button {
           background: rgb(229, 235, 241);
           border: none;
           color: $secondColor;
@@ -240,48 +264,56 @@ body {
           border-radius: 4px;
         }
       }
-      &-statWrapper{
+
+      &-statWrapper {
         background: rgb(229, 235, 241);
         border-radius: 3px;
       }
-      &-stat{
+
+      &-stat {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        color: rgb(85,103,125);
+        color: rgb(85, 103, 125);
         cursor: pointer;
         width: 30px;
         height: 30px;
-        svg{
+
+        svg {
           display: inline-block;
           vertical-align: middle;
         }
       }
-      &-friends{
+
+      &-friends {
         background: rgb(255, 255, 255);
         padding: 20px 15px 15px;
         margin: 0 10px 0 0;
         border-radius: 3px;
-        box-shadow: rgb(215,216, 219) 0 1px 0 0, rgb(227, 228, 232) 0 0 0 1px;
+        box-shadow: rgb(215, 216, 219) 0 1px 0 0, rgb(227, 228, 232) 0 0 0 1px;
       }
-      &-friendsInfo{
+
+      &-friendsInfo {
         display: flex;
         justify-content: space-between;
         padding-bottom: 10px;
-        a{
+
+        a {
           font-size: 12px;
           color: $secondColor;
           text-decoration: none;
         }
       }
-      &-friendsInfoLeft{
+
+      &-friendsInfoLeft {
         font-size: 12px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         font-family: $font;
         color: $secondColor;
-        p{
+
+        p {
           font-size: 12px;
           padding-left: 10px;
           color: $secondColor;
@@ -289,9 +321,9 @@ body {
       }
     }
 
-    &-avatar{
+    &-avatar {
 
-      img{
+      img {
         width: 200px;
         height: 200px;
         overflow: hidden;
@@ -301,12 +333,144 @@ body {
   }
 }
 
+.Groups {
+  background: rgb(255, 255, 255);
+  padding: 20px 15px 15px;
+  margin: 10px 10px 0 0;
+  border-radius: 3px;
+  box-shadow: rgb(215, 216, 219) 0 1px 0 0, rgb(227, 228, 232) 0 0 0 1px;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+
+    &-text {
+      font-size: 12px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: rgb(0, 0, 0);
+      font-family: $font;
+
+      p {
+        font-size: 12px;
+        padding-left: 10px;
+        color: rgb(119, 119, 119);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-between;
+
+    &-image {
+      width: 22%;
+      height: 40px;
+      background: black;
+      border-radius: 50%;
+    }
+
+    &-desc {
+      width: 88%;
+
+      &-title {
+        color: $secondColor;
+        font-size: 13px;
+        text-align: left;
+        padding: 0 0 0 10px;
+        font-family: $font;
+        font-weight: 500;
+      }
+
+      &-subtitle {
+        font-size: 12px;
+        max-height: 48px;
+        overflow: hidden;
+        color: rgb(101, 101, 101);
+        text-align: left;
+        padding: 5px 0 0 10px;
+        font-family: $pinkColor;
+      }
+    }
+  }
+}
+
+.Albums {
+  background: rgb(255, 255, 255);
+  padding: 20px 15px 15px;
+  margin: 10px 10px 0 0;
+  border-radius: 3px;
+  box-shadow: rgb(215, 216, 219) 0 1px 0 0, rgb(227, 228, 232) 0 0 0 1px;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+
+    &-text {
+      font-size: 12px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: rgb(0, 0, 0);
+      font-family: $font;
+
+      p {
+        font-size: 12px;
+        padding-left: 10px;
+        color: rgb(119, 119, 119);
+        font-family: $font;
+      }
+    }
+  }
+
+  &__photo {
+    position: relative;
+    vertical-align: top;
+    border-radius: 4px;
+    max-width: 200px;
+    margin-bottom: 10px;
+    height: 132px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    background: black;
+
+    &-subtitle {
+      padding: 10px 15px;
+      position: absolute;
+      z-index: 2;
+      bottom: 5px;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      width: 85%;
+      transition: all 0.3s ease 0s;
+      transform: translateY(0px);
+
+      span {
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        font-weight: bold;
+        font-family: $font;
+      }
+    }
+  }
+}
+
+
 //END HOME PAGE
 
 //MENU
-.Menu{
+.Menu {
   margin-top: 20px;
-   li{
+
+  li {
     text-align: left;
     padding: 5px 0;
     text-decoration: none;
@@ -314,7 +478,7 @@ body {
     opacity: 0.9;
     width: 100%;
     line-height: 1.5;
-     font-weight: 500;
+    font-weight: 500;
     font-family: $font;
   }
 }

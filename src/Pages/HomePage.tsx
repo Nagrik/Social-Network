@@ -1,6 +1,8 @@
 import React from 'react';
+import Groups from '../Components/Groups';
 import Menu from "../Components/Menu";
 import avatar from '../images/user.jpg'
+import Albums from "../Components/Albums";
 
 const Home = () => {
     return (
@@ -35,11 +37,21 @@ const Home = () => {
                             <div className='Home__content-left-friendsInfo'>
                                 <div className='Home__content-left-friendsInfoLeft'>
                                     Friends
-                                    <p> 345 </p>
+                                    <p> 10 </p>
                                 </div>
                                 <a href='/'>update</a>
                             </div>
                         </div>
+                        <div className='Home__content-left-friends'>
+                            <div className='Home__content-left-friendsInfo'>
+                                <div className='Home__content-left-friendsInfoLeft'>
+                                    Friends Online
+                                    <p> 3 </p>
+                                </div>
+                            </div>
+                        </div>
+                        <Groups/>
+                        <Albums/>
                     </div>
                 </div>
             </div>
