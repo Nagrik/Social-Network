@@ -40,7 +40,7 @@ const DarkMode = () => {
             unCheckedChildren={<FaMoon className='Icon' />}
             //@ts-ignore
             id='darkMode'
-            onClick={(e) => switchTheme(e)}
+            onClick={switchTheme}
             className='switch'
         />
     );
