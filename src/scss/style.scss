@@ -1,0 +1,196 @@
+@import "global";
+@import "vars";
+
+body {
+  background: $mainColor;
+}
+
+//START HEADER
+.header {
+  background: $secondColor;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 50px;
+  .light{
+    background: cornflowerblue;
+  }
+
+  &__container {
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 0 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    &-logo {
+      display: flex;
+      flex-basis: 20%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    &-search {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      flex-basis: 10%;
+
+      input {
+        border-width: 0 0 0 8px;
+        border-top-style: initial;
+        border-right-style: initial;
+        border-bottom-style: initial;
+        border-top-color: initial;
+        border-right-color: initial;
+        border-bottom-color: initial;
+        border-image: initial;
+        box-sizing: border-box;
+        padding: 6px 6px 6px 19px;
+        margin: 10px 0;
+        height: 28px;
+        line-height: 16px;
+        width: 230px;
+        border-radius: 14px;
+        transition: background-color 0.05s ease 0s, color 0.05s ease 0s;
+        border-left-style: solid;
+        border-left-color: transparent;
+        background: white;
+        outline: none;
+        color: $mainColor;
+        font-size: 13px;
+        font-family: $font;
+
+        &::placeholder {
+          color: $mainColor;
+          font-family: $font;
+        }
+      }
+
+      svg {
+        vertical-align: middle;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: $secondColor;
+        position: absolute;
+        left: 7px;
+        top: 16px;
+      }
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+      margin-top: 5px;
+    }
+    &-bell{
+      padding: 15px 20px;
+      margin-left: 20px;
+      cursor: pointer;
+      &:hover{
+        background: $mainColor;
+        transition: all 0.3s ease 0s;
+      }
+      svg{
+        vertical-align: middle;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+    }
+    &-user{
+      display: flex;
+      flex-basis: 50%;
+      justify-content: flex-end;
+      span{
+        padding: 18px 15px 0 0;
+        font-weight: bold;
+        font-size: 12px;
+        color: white;
+        font-family: $font;
+      }
+      img{
+        width: 32px;
+        height: 32px;
+        background: center center/cover;
+        border-radius: 50%;
+        margin: 10px 0;
+      }
+      &-svg{
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        color: white;
+        cursor: pointer;
+        display: inline-flex;
+        svg{
+          vertical-align: middle;
+          display: inline-block;
+        }
+      }
+      &-reverseSvg{
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        color: white;
+        cursor: pointer;
+        display: inline-flex;
+        transform: rotate(180deg);
+        svg{
+          vertical-align: middle;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+//DARK MODE
+.switch{
+  margin-left: 15px;
+}
+#darkMode {
+  filter: grayscale(100%);
+  border: none;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#darkMode {
+  filter: none;
+  background-color: #8c8686;
+  cursor: pointer;
+}
+
+#darkMode.clicked {
+  filter: none !important;
+}
+:root {
+  --dark: rgb(35, 42, 48);
+  --white: rgb(236, 236, 236);
+}
+body.light {
+  --background-color: var(--white);
+  --text-color: var(--dark);
+  --font-weight: 400;
+}
+body.dark {
+  --background-color: var(--dark);
+  --text-color: var(--white);
+  --font-weight: 500;
+}
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-weight: var(--font-weight);
+  transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
+}
+
+.Icon{
+  display: flex;
+}
+// END DARK MODE
+
+//END HEADER
