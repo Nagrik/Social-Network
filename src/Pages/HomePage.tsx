@@ -1,8 +1,12 @@
 import React from 'react';
-import Groups from '../Components/Groups';
+import Groups from '../Components/HomePage/Groups';
 import Menu from "../Components/Menu";
 import avatar from '../images/user.jpg'
-import Albums from "../Components/Albums";
+import Albums from "../Components/HomePage/Albums";
+import Friends from "../Components/HomePage/Friends";
+import Info from "../Components/HomePage/Info";
+import UserPhotos from "../Components/HomePage/UserPhotos";
+import {Modal} from "../Components/HomePage/Modal";
 
 const Home = () => {
     return (
@@ -33,25 +37,14 @@ const Home = () => {
                             </div>
 
                         </div>
-                        <div className='Home__content-left-friends'>
-                            <div className='Home__content-left-friendsInfo'>
-                                <div className='Home__content-left-friendsInfoLeft'>
-                                    Friends
-                                    <p> 10 </p>
-                                </div>
-                                <a href='/'>update</a>
-                            </div>
-                        </div>
-                        <div className='Home__content-left-friends'>
-                            <div className='Home__content-left-friendsInfo'>
-                                <div className='Home__content-left-friendsInfoLeft'>
-                                    Friends Online
-                                    <p> 3 </p>
-                                </div>
-                            </div>
-                        </div>
+                        <Friends/>
                         <Groups/>
                         <Albums/>
+                    </div>
+                    <div className='Home__content-right'>
+                        <Info/>
+                        <UserPhotos/>
+                        <Modal/>
                     </div>
                 </div>
             </div>
