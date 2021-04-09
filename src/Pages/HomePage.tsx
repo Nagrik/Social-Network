@@ -6,7 +6,9 @@ import Albums from "../Components/HomePage/Albums";
 import Friends from "../Components/HomePage/Friends";
 import Info from "../Components/HomePage/Info";
 import UserPhotos from "../Components/HomePage/UserPhotos";
-import {Modal} from "../Components/HomePage/Modal";
+import WritePostsField from "../Components/HomePage/WritePostField";
+import Posts from "../Components/HomePage/Posts/Posts";
+import ChoosePosts from "../Components/HomePage/ChoosePosts";
 
 const Home = () => {
     return (
@@ -44,7 +46,9 @@ const Home = () => {
                     <div className='Home__content-right'>
                         <Info/>
                         <UserPhotos/>
-                        <Modal/>
+                        <WritePostsField/>
+                        <ChoosePosts/>
+                        <Posts/>
                     </div>
                 </div>
             </div>
