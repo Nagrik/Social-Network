@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
 import author from '../../../images/user.jpg'
 
-export default ({post}:any) => {
+export interface PostsPropsType {
+    post: Array<string>,
+}
+
+
+export default ({post}:PostsPropsType) => {
     const [like, setLike] = useState(0);
     const [likeActive, setLikeActive] = useState(true);
 
@@ -44,6 +49,7 @@ export default ({post}:any) => {
                     </div>
                 </div>
                 <div className="Posts__text-wrapper">
+                    {/*@ts-ignore*/}
                     <p>{post.title.title}</p>
                 </div>
                 <div className="Posts__footer">

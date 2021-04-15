@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../images/pinguin.png'
 import user from '../images/user.jpg'
 import DarkMode from "../Tools/DarkMode";
@@ -14,9 +15,9 @@ const Header = () => {
     return (
         <div className='header'>
             <div className='header__container'>
-                <div className='header__container-logo'>
+                <NavLink to='/Home' className='header__container-logo'>
                     <img src={logo} alt='logo'/>
-                </div>
+                </NavLink>
                 <div className='header__container-search'>
                     <svg fill="currentColor" height="14" width="14" viewBox="0 0 1664 1792">
                         <path d="M1152 832q0-185-131.5-316.5t-316.5-131.5-316.5

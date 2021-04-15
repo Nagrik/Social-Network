@@ -9,9 +9,7 @@ const ChoosePosts = () => {
     return (
         <div className='ChoosePosts'>
             <div className="ChoosePosts__theme">
-                {/*@ts-ignore*/}
                 <span  onClick={switchActivePosts} className={active ? 'ChoosePosts__theme-active' : ''}>All posts</span>
-                {/*@ts-ignore*/}
                 <span onClick={switchActivePosts} className={!active ? 'ChoosePosts__theme-active' : ''}>My posts</span>
             </div>
             <div className="searchIcon">

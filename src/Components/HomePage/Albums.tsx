@@ -26,7 +26,6 @@ const ModalAlbums = () => {
     const photo = useSelector(selectPhoto)
     const selectLoad = ({album}:any) => album.isLoadedPhotos
     const isLoaded = useSelector(selectLoad)
-    console.log(isLoaded)
 
     useEffect(() => {
         dispatch(setLoadedPhoto(false))
@@ -62,7 +61,7 @@ const ModalAlbums = () => {
                         {isLoaded ? photo.map((obj: object) => (
                                 //@ts-ignore
                                 <img src={obj} alt=''/>))
-                            : Array(10).fill(0).map((_, index) => (
+                            : Array(6).fill(0).map((_, index) => (
                                 <Loader key={index}/>))}
                     </div>
                 </div>

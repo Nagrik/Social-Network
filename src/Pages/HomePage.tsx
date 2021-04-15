@@ -12,11 +12,7 @@ import ChoosePosts from "../Components/HomePage/ChoosePosts";
 
 const Home = () => {
     return (
-        <div className='Home'>
-            <div className='Home__wrapper'>
-                <div className='Home__menu'>
-                    <Menu/>
-                </div>
+
                 <div className='Home__content'>
                     <div className='Home__content-left'>
                         <div className='Home__content-left-avatarWrapper'>
@@ -51,8 +47,6 @@ const Home = () => {
                         <Posts/>
                     </div>
                 </div>
-            </div>
-        </div>
     );
 };
 

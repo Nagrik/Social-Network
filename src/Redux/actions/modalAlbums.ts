@@ -1,5 +1,8 @@
 import {SET_LOADED_PHOTO, SET_PHOTOS} from "../types";
 
+export type ModalAlbumsActionsType = setLoadedPhotoType | setPhotosType
+
+
 type setLoadedPhotoType = {
     type: typeof SET_LOADED_PHOTO,
     payload: boolean

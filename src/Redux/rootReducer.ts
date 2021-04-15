@@ -4,5 +4,5 @@ import {albumReducer} from "./reducers/modalAlbums";
 
 export const rootReducer = combineReducers({
         posts:postsReducer,
-        album: albumReducer
+        album: albumReducer,
 })

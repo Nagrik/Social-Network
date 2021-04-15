@@ -209,6 +209,13 @@ body {
   display: flex;
 }
 
+a.dark{
+  --text-color: var(--dark) !important;
+  &:hover{
+    color: $pinkColor;
+  }
+}
+
 // END DARK MODE
 
 //END HEADER
@@ -1358,5 +1365,90 @@ $black: #222;
   }
 }
 //END POSTS
+
+
+//MESSAGE PAGE
+
+.message{
+  border: 2px solid red;
+  width: 80%;
+  text-align: right;
+  &__wrapper{
+    display: flex;
+    width: 800px;
+
+  }
+  &__send{
+
+  }
+  &__rooms{
+    width: 20%;
+    border: 2px solid #cccccc;
+    &-active{
+      background: $secondColor;
+      width: 20%;
+      border: 2px solid #cccccc;
+    }
+  }
+  &__room{
+      width: 100%;
+      border: 1px solid $secondColor;
+    display: flex;
+
+    &-photo{
+      padding: 5px;
+      img{
+        width: 30px;
+        height: 30px;
+        background: cover/center;
+        border-radius: 50%;
+      }
+    }
+    &-userWrapper{
+      margin-left: 10px;
+      padding: 5px;
+      p{
+        font-family: $font;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+    }
+    &-user{
+      font-family: $font;
+      font-size: 13px;
+      font-weight: 700;
+    }
+  }
+}
+
+//END MESSAGE PAGE
+
+//LOADER
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+//END LOADER
+
 
 
