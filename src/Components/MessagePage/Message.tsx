@@ -8,7 +8,7 @@ import Chat from "./Chat";
 const MessagePage = () => {
     const [state, dispatch] = React.useReducer(socketReducer, {
         joined: false,
-        roomId: null,
+        roomId: 1,
         userName: null,
         users: [],
         messages: [],
@@ -49,7 +49,7 @@ const MessagePage = () => {
 
 
     return (
-        <div className="wrapper">
+        <div className="message">
                 <JoinBlock onLogin={onLogin}  />
                 <Chat {...state} onAddMessage={addMessage} />
         </div>

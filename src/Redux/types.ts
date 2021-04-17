@@ -1,3 +1,5 @@
 export const CREATE_POST = 'CREATE_POST'
 export const SET_LOADED_PHOTO = 'SET_LOADED_PHOTO'
 export const SET_PHOTOS = 'SET_PHOTOS'
+export const SHOW_ALERT = 'SHOW_ALERT'
+export const HIDE_ALERT = 'HIDE_ALERT'

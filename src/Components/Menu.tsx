@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {Link, NavLink } from 'react-router-dom';
 
 
 const Menu = () => {
     return (
             <ul className='Menu'>
-                <li><NavLink to='/Home'>My profile</NavLink></li>
+                <li><Link to='/Home'>My profile</Link></li>
                 <NavLink to='/Home'><li>News</li></NavLink>
                 <li><NavLink to='/Messages'>Messages</NavLink></li>
                 <NavLink to='/Home'><li>Friends</li></NavLink>
