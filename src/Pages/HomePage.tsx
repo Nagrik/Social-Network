@@ -1,6 +1,5 @@
 import React from 'react';
 import Groups from '../Components/HomePage/Groups';
-import Menu from "../Components/Menu";
 import avatar from '../images/user.jpg'
 import Albums from "../Components/HomePage/Albums";
 import Friends from "../Components/HomePage/Friends";
@@ -11,6 +10,8 @@ import Posts from "../Components/HomePage/Posts/Posts";
 import ChoosePosts from "../Components/HomePage/ChoosePosts";
 
 const Home = () => {
+
+
     return (
 
                 <div className='Home__content'>

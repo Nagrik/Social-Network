@@ -1,12 +1,12 @@
 import {SET_LOADED_PHOTO, SET_PHOTOS} from "../types";
 import {ModalAlbumsActionsType} from "../actions/modalAlbums";
 
-type InitialStateAlbmumType = {
+type InitialStateAlbumType = {
     isLoadedPhotos:boolean,
     photos:Array<string>
 }
 
-const initialState:InitialStateAlbmumType = {
+const initialState:InitialStateAlbumType = {
     isLoadedPhotos:false,
     photos:[],
 }

@@ -1,9 +1,9 @@
 import React from 'react';
-import socketReducer from "../../Redux/reducers/socketReducer";
-import socket from "../../socket";
+import socketReducer from "../Redux/reducers/socketReducer";
+import socket from "../socket";
 import axios from "axios";
-import JoinBlock from "./JoinBlock";
-import Chat from "./Chat";
+import JoinBlock from "../Components/MessagePage/JoinBlock";
+import Chat from "../Components/MessagePage/Chat";
 
 const MessagePage = () => {
     const [state, dispatch] = React.useReducer(socketReducer, {

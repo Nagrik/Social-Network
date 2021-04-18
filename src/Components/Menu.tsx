@@ -6,7 +6,7 @@ const Menu = () => {
     return (
             <ul className='Menu'>
                 <li><Link to='/Home'>My profile</Link></li>
-                <NavLink to='/Home'><li>News</li></NavLink>
+                <NavLink to='/News'><li>News</li></NavLink>
                 <li><NavLink to='/Messages'>Messages</NavLink></li>
                 <NavLink to='/Home'><li>Friends</li></NavLink>
                 <NavLink to='/Home'><li>Photos</li></NavLink>
