@@ -38,7 +38,7 @@ const ModalAlbums = () => {
     return (
         <>
             <div onClick={showModal} className='Albums__photo'>
-                <img alt='' src='https://media.istockphoto.com/photos/finger-touches-surface-of-mountain-lake-hand-reflection-picture-id1089998688?k=6&m=1089998688&s=612x612&w=0&h=2AehEc46pDpU6wBACZJXOWevzErTCB_e0Lrs6y9SoTw='/>
+                <img alt='' src='https://st.depositphotos.com/1428083/2946/i/600/depositphotos_29460297-stock-photo-bird-cage.jpg'/>
                 <div className="Albums__photo-subtitle">
                     <span>My best photo</span>
                     <span>10</span>

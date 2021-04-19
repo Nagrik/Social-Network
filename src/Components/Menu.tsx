@@ -8,7 +8,7 @@ const Menu = () => {
                 <li><Link to='/Home'>My profile</Link></li>
                 <NavLink to='/News'><li>News</li></NavLink>
                 <li><NavLink to='/Messages'>Messages</NavLink></li>
-                <NavLink to='/Home'><li>Friends</li></NavLink>
+                <NavLink to='/Friends'><li>Friends</li></NavLink>
                 <NavLink to='/Home'><li>Photos</li></NavLink>
                 <NavLink to='/Home'><li>Music</li></NavLink>
                 <NavLink to='/Home'><li>Videos</li></NavLink>
