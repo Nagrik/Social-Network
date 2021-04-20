@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Info = () => {
+const Info = ({friend}:any) => {
     const [show, setShow] = useState(false);
 
     const changeInfoBlock = () => {
@@ -11,7 +11,9 @@ const Info = () => {
     return (
         <div className='Info'>
             <h3>
-                Roman Nahryshko
+                {
+                    friend ? friend.name + ' ' +  friend.surname : 'Roman Nahryshko'
+                }
                 <span>Online</span>
             </h3>
             <p>You don’t need money if you don’t have time to spend it</p>

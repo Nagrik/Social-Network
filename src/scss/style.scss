@@ -1671,18 +1671,19 @@ $black: #222;
   &__friend{
     margin-left: 20px;
     text-align: left;
-    h3{
-      color: rgb(42, 88, 133);
+    a{
+      color: $secondColor;
       font-size: 14px;
       font-weight: 600;
       margin-bottom: 8px;
     }
-    a{
-      color: rgb(42, 88, 133);
+    p{
+      color:$secondColor;
       text-decoration: none;
       font-size: 12.5px;
       cursor: pointer;
       opacity: 0.7;
+      margin-top: 15px;
     }
     &-wrapper{
       background: rgb(255, 255, 255);

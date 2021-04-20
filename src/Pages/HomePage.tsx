@@ -9,16 +9,19 @@ import WritePostsField from "../Components/HomePage/WritePostField";
 import Posts from "../Components/HomePage/Posts/Posts";
 import ChoosePosts from "../Components/HomePage/ChoosePosts";
 
-const Home = () => {
+const Home = ({friend}:any) => {
+    
+
 
 
     return (
-
                 <div className='Home__content'>
                     <div className='Home__content-left'>
                         <div className='Home__content-left-avatarWrapper'>
                             <div className='Home__content-avatar'>
-                                <img src={avatar} alt='avatar'/>
+                                {
+                                    friend ? <img src={friend.imageUrl} alt='avatar'/> : <img src={avatar} alt='avatar'/>
+                                }
                             </div>
                             <div className='Home__content-left-under'>
                                 <button>Edit</button>
@@ -41,7 +44,7 @@ const Home = () => {
                         <Albums/>
                     </div>
                     <div className='Home__content-right'>
-                        <Info/>
+                        <Info friend={friend}/>
                         <UserPhotos/>
                         <WritePostsField/>
                         <ChoosePosts/>

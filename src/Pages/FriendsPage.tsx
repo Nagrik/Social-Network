@@ -1,7 +1,30 @@
-import React from 'react';
-import user from '../images/user.jpg'
+import React, {useEffect} from 'react';
+import {NavLink} from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux";
+import axios from "axios";
+import {setFriends, setLoadedFriends} from "../Redux/actions/friendsActions";
+import Loader from "../Tools/Loader";
 
-const FriendsPage = () => {
+const FriendsPage = (props:any) => {
+    const dispatch = useDispatch()
+
+    const selectLoad = ({friends}:any) => friends.isLoadedFriends
+    const selectFriends = ({friends}:any) => friends.friends
+    const isLoaded = useSelector(selectLoad)
+    const friends = useSelector(selectFriends)
+    console.log(friends)
+    console.log(isLoaded)
+
+    dispatch(setLoadedFriends(true))
+
+    useEffect(() => {
+        dispatch(setLoadedFriends(false))
+        axios.get(`https://social-network-31abc-default-rtdb.firebaseio.com/friends.json`).then(({data}) => {
+            dispatch(setFriends(data))
+        })
+    }, []);
+
+
     return (
         <div className='FriendsPage'>
             <div className="FriendsPage__status">
@@ -24,15 +47,28 @@ const FriendsPage = () => {
                 </div>
                     </div>
             </div>
-            <div className="FriendsPage__friend-wrapper">
-                <img src={user} alt="Friend"/>
-                <div className="FriendsPage__friend">
-                    <h3>Roman nahryshko</h3>
-                    <a href="/">Write Message</a>
-                </div>
-            </div>
+            {
+                isLoaded ?
+                friends.map(({name, surname, imageUrl, id}:any , i:number) => (
+                    <div className="FriendsPage__friend-wrapper" key={i} >
+                        <img src={imageUrl} alt="Friend"/>
+                        <div className="FriendsPage__friend">
+                            <NavLink to={'/Friend/' + id} >{name}  {surname}</NavLink>
+                            <p>Write Message</p>
+                        </div>
+                    </div>
+                ))
+                    : <Loader/>
+            }
+
         </div>
     );
 };
 
-export default FriendsPage;
+export default FriendsPage ;
+
+
+
+
+
+
