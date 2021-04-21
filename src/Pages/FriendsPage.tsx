@@ -1,11 +1,10 @@
 import React, {useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
-import axios from "axios";
-import {setFriends, setLoadedFriends} from "../Redux/actions/friendsActions";
+import {fetchFriends} from "../Redux/actions/friendsActions";
 import Loader from "../Tools/Loader";
 
-const FriendsPage = (props:any) => {
+const FriendsPage = () => {
     const dispatch = useDispatch()
 
     const selectLoad = ({friends}:any) => friends.isLoadedFriends
@@ -15,13 +14,9 @@ const FriendsPage = (props:any) => {
     console.log(friends)
     console.log(isLoaded)
 
-    dispatch(setLoadedFriends(true))
-
+debugger
     useEffect(() => {
-        dispatch(setLoadedFriends(false))
-        axios.get(`https://social-network-31abc-default-rtdb.firebaseio.com/friends.json`).then(({data}) => {
-            dispatch(setFriends(data))
-        })
+        dispatch(fetchFriends())
     }, []);
 
 

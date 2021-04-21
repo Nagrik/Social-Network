@@ -10,7 +10,7 @@ import Posts from "../Components/HomePage/Posts/Posts";
 import ChoosePosts from "../Components/HomePage/ChoosePosts";
 
 const Home = ({friend}:any) => {
-    
+
 
 
 

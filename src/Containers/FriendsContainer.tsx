@@ -2,16 +2,15 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import { withRouter } from 'react-router-dom';
-import {setFriends, setLoadedFriends} from "../Redux/actions/friendsActions";
+import {setFriend, setLoadedFriends} from "../Redux/actions/friendsActions";
 import Loader from "../Tools/Loader";
 import Home from "../Pages/HomePage";
 
 const FriendsPageContainer = (props:any) => {
     let friendId = props.match.params.friendId
-    console.log(friendId)
     const dispatch = useDispatch()
 
-    const selectAuthor = ({friends}:any) => friends.friends
+    const selectAuthor = ({friends}:any) => friends.friend
     const friend = useSelector(selectAuthor)
     console.log(friend)
 
@@ -21,7 +20,7 @@ const FriendsPageContainer = (props:any) => {
     React.useEffect(() => {
         dispatch(setLoadedFriends(false))
         axios.get(`https://social-network-31abc-default-rtdb.firebaseio.com/friends/${friendId}.json`).then(({data}) => {
-            dispatch(setFriends(data))
+            dispatch(setFriend(data))
         })
     }, [])
 
