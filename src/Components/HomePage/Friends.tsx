@@ -2,6 +2,7 @@ import React from 'react';
 import Andrey from '../../images/Andrey.jpg'
 import Sanya from '../../images/Sanya.jpg'
 import Kirill from '../../images/Kirill.jpg'
+import { NavLink } from 'react-router-dom';
 
 const Friends = () => {
     return (
@@ -14,20 +15,20 @@ const Friends = () => {
                     </div>
                     <a href='/'>update</a>
                 </div>
-                <a href='/' className='Friends__photo'>
-                    <div className='Friends__photo-block'>
+                <div className='Friends__photo'>
+                    <NavLink to='/Friend/2'  className='Friends__photo-block'>
                         <img src={Andrey} alt='Andrey'/>
                         <p>Andrey</p>
-                    </div>
-                    <a href='/' className='Friends__photo-block'>
+                    </NavLink>
+                    <NavLink to='/Friend/0'  className='Friends__photo-block'>
                         <img src={Sanya} alt='Sanya'/>
                         <p>Alexander</p>
-                    </a>
-                    <a href='/' className='Friends__photo-block'>
+                    </NavLink>
+                    <NavLink to='/Friend/1' className='Friends__photo-block'>
                         <img src={Kirill} alt='Kirill'/>
                         <p>Kirill</p>
-                    </a>
-                </a>
+                    </NavLink>
+                </div>
             </div>
             <div className='Friends'>
                 <div className='Friends__info'>
@@ -37,10 +38,10 @@ const Friends = () => {
                     </div>
                 </div>
                 <div className='Friends__photo'>
-                    <a className='Friends__photo-block' href='/'>
+                    <NavLink to='/Friend/1' className='Friends__photo-block'>
                         <img src={Kirill} alt='Kirill'/>
                         <p>Kirill</p>
-                    </a>
+                    </NavLink>
                 </div>
             </div>
         </div>

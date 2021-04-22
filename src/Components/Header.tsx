@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import logo from '../images/pinguin.png'
 import user from '../images/user.jpg'
 import DarkMode from "../Tools/DarkMode";
+import {useSelector} from "react-redux";
 
 const Header = () => {
+    const selectToken = ({auth}: any) => !!auth.token
+    const token = useSelector(selectToken)
 
     const [arrow, setArrow] = useState(false);
 
@@ -45,19 +48,31 @@ const Header = () => {
                     </svg>
                 </div>
                 <DarkMode/>
-                <div className='header__container-user'>
-                    <span>Roman</span>
-                    <img src={user} alt=''/>
-                    <div className={!arrow ? 'header__container-user-svg' : 'header__container-user-reverseSvg'}
-                         onClick={switchArrow}>
-                        <svg fill="currentColor" height="12" width="12" viewBox="0 0 1792 1792">
-                            <path d="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19
+                {
+                    token && <div className='header__container-user'>
+                        <span>Roman</span>
+                        <img src={user} alt=''/>
+                        <div className={!arrow ? 'header__container-user-svg' : 'header__container-user-reverseSvg'}
+                             onClick={switchArrow}>
+                            <svg fill="currentColor" height="12" width="12" viewBox="0 0 1792 1792">
+                                <path d="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19
                         -45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45
                         19l166 165q19 19 19 45.5t-19 45.5z">
-                            </path>
-                        </svg>
+                                </path>
+                            </svg>
+                        </div>
+                        {arrow &&
+                        <div className="ArrowMenu">
+                            <ul>
+                                <li><NavLink to='/Logout'>Logout</NavLink></li>
+                                <li><NavLink to='/'>Settings #2</NavLink></li>
+                                <li><NavLink to='/'>Settings #3</NavLink></li>
+                            </ul>
+                        </div>
+                        }
                     </div>
-                </div>
+                }
+
             </div>
         </div>
     );

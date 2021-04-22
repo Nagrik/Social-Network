@@ -32,7 +32,7 @@ const ModalAlbums = () => {
         axios.get('https://social-network-31abc-default-rtdb.firebaseio.com/albumsImages.json').then(({data}) => {
             dispatch(setPhotos(data))
         })
-    }, []);
+    }, [dispatch]);
 
 
     return (
@@ -58,9 +58,9 @@ const ModalAlbums = () => {
                 </div>
                 <div className='Albums__photo-modal-wrapper'>
                     <div className="Albums__photo-modal">
-                        {isLoaded ? photo.map((obj: object) => (
+                        {isLoaded ? photo.map((obj: object, i:number) => (
                                 //@ts-ignore
-                                <img src={obj} alt=''/>))
+                                <img src={obj} alt='' key={i}/>))
                             : Array(6).fill(0).map((_, index) => (
                                 <Loader key={index}/>))}
                     </div>

@@ -88,7 +88,7 @@ body {
     }
 
     &-bell {
-      padding: 15px 20px;
+      padding: 13px 20px;
       margin-left: 20px;
       cursor: pointer;
 
@@ -158,7 +158,29 @@ body {
     }
   }
 }
+.ArrowMenu{
+  width: 120px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 100;
+  top: 50px;
+  box-shadow:0 6px 17px 3px #ccc;
+  ul{
+    padding: 7px;
+    text-align: center;
+    li{
+      padding: 5px 0;
+      a{
+        color: $secondColor;
+        font-family: $font;
 
+      }
+    }
+  }
+}
 
 //DARK MODE
 .switch {
@@ -766,7 +788,6 @@ input, button, select, optgroup, textarea {
       background-repeat: no-repeat;
       background-position: center center;
       cursor: pointer;
-      background: #000;
     }
   }
   &-photo{
@@ -1673,11 +1694,15 @@ $black: #222;
   &__friend{
     margin-left: 20px;
     text-align: left;
+    cursor: pointer;
+
     a{
       color: $secondColor;
       font-size: 14px;
       font-weight: 600;
       margin-bottom: 8px;
+      cursor: pointer;
+
     }
     p{
       color:$secondColor;
@@ -1708,6 +1733,56 @@ $black: #222;
 }
 
 // END FRIENDS PAGE
+
+
+
+//REGISTER PAGE
+.wrapper{
+  width: 50%;
+  height: 100vh ;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.Settings-title{
+  text-align: center;
+  padding-bottom: 20px;
+  h1{
+  color:var(--text-color);
+    font-family: $font;
+    font-size: 24px;
+  }
+}
+
+.FieldSettings{
+  width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  margin: 10px 0;
+  outline: none;
+}
+.error{
+  text-align: center;
+  color: darkred;
+}
+
+.settings-button-wrapper{
+  text-align: center;
+  padding: 10px 0;
+}
+
+.settings-button{
+  padding: 10px 35px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+
+//END REGISTER PAGE
 
 
 

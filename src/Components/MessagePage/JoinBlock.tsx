@@ -5,7 +5,7 @@ import user from '../../images/user.jpg'
 function JoinBlock({ onLogin }:any) {
     const [roomId, setRoomId] = React.useState('');
     const [userName, setUserName] = React.useState('');
-    const [isLoading, setLoading] = React.useState(false);
+    const [ , setLoading] = React.useState(false);
     const [active, setActive] = React.useState(false);
 
 

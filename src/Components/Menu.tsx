@@ -13,7 +13,6 @@ const Menu = () => {
                 <NavLink to='/Home'><li>Music</li></NavLink>
                 <NavLink to='/Home'><li>Videos</li></NavLink>
                 <NavLink to='/Home'><li>Games</li></NavLink>
-                <NavLink to='/Registration'><li>Registration</li></NavLink>
             </ul>
     );
 };

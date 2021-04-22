@@ -36,15 +36,15 @@ const RegisterPage = (props:any) => {
         <div className="wrapper">
             <div className="content page-content">
                 <div className='Settings'>
-                    <div className='settings-title'>
-                        <h1>Registration</h1>
+                    <div className='Settings-title'>
+                        <h1>Login</h1>
                     </div>
                     <Formik
                         initialValues={{
-                            firstName: '',
-                            lastName: '',
-                            email: '',
-                            password:''
+                            firstName: 'Roman',
+                            lastName: 'Nahryshko',
+                            email: 'admin@gmail.com',
+                            password:'qwerty'
                         }}
                         validationSchema={SignupSchema}
                         //@ts-ignore
@@ -58,6 +58,7 @@ const RegisterPage = (props:any) => {
                                            className='FieldSettings'
                                            type='text'
                                            {...formik.getFieldProps('firstName')}
+
                                     />
 
                                     {formik.touched.firstName && formik.errors.firstName ? (
@@ -104,9 +105,9 @@ const RegisterPage = (props:any) => {
                                     {
                                         !formik.errors.email && !formik.errors.firstName && !formik.errors.lastName
                                             //@ts-ignore
-                                            ? <button type="submit" className='settings-button' onSubmit={registerHandler}>Register</button>
+                                            ? <button type="submit" className='settings-button' onSubmit={registerHandler}>Login</button>
                                             : <button type="submit" className='settings-button-disabled'
-                                                      disabled>Register</button>
+                                                      disabled>Login</button>
                                     }
 
                                 </div>

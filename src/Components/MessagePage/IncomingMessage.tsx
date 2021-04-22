@@ -3,6 +3,7 @@ import { Comment, Tooltip, Avatar } from 'antd';
 import moment from 'moment';
 import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
 import author from '../../images/user.jpg'
+import { NavLink } from 'react-router-dom';
 
 export const IncomingMessage = ({message, name}:any) => {
     const [likes, setLikes] = useState(0);
@@ -40,7 +41,7 @@ export const IncomingMessage = ({message, name}:any) => {
     return (
         <Comment
             actions={actions}
-            author={<a>{name}</a>}
+            author={<NavLink to='/'>{name}</NavLink>}
             avatar={
                 <Avatar
                     src={author}

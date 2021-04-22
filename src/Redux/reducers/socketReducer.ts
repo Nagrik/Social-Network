@@ -1,6 +1,6 @@
 
 
-export default (state:any, action:any) => {
+export default function socketReducer (state:any, action:any)  {
     switch (action.type) {
         case 'JOINED':
             return {

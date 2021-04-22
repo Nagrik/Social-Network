@@ -6,7 +6,7 @@ export interface PostsPropsType {
 }
 
 
-export default ({post}:PostsPropsType) => {
+export default function Post  ({post}:PostsPropsType) {
     const [like, setLike] = useState(0);
     const [likeActive, setLikeActive] = useState(true);
 

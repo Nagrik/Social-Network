@@ -1,19 +1,20 @@
 import axios from "axios";
-import {AUTH_LOGOUT, AUTH_SUCCESS} from "../types";
+import {AUTH_LOGOUT, AUTH_SUCCESS, LOGIN} from "../types";
 
-
-
-export function auth(email: string, password: any, isLogin: boolean) {
-    return async (dispatch: any) => {
-        const authData = {
-            email, password,
-            returnSecureToken: true
-        }
-        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAB32mob713gETZ4HaeCJL-QKajUOtGwNU'
-        if (isLogin) {
-            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAB32mob713gETZ4HaeCJL-QKajUOtGwNU'
-        }
-        const response = await axios.post(url, authData)
+export const auth = (email:string, password:string, isLogin:boolean) => {
+    return async (dispatch:any) => {
+        const url = isLogin
+            ? 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAB32mob713gETZ4HaeCJL-QKajUOtGwNU'
+            : 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAB32mob713gETZ4HaeCJL-QKajUOtGwNU'
+        const response = await axios.post(url, {
+            email,
+            password,
+            returnSecureToken:true
+        })
+        dispatch({
+            type:LOGIN,
+            payload:response.data
+        })
         const data = response.data
 
         const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000)
@@ -24,11 +25,11 @@ export function auth(email: string, password: any, isLogin: boolean) {
         localStorage.setItem('expirationDate', expirationDate)
 
         dispatch(authSuccess(data.idToken))
-        dispatch(autoLogout(data.expiresIn))
+        dispatch(authLogout(data.expiresIn))
     }
 }
 
-export function autoLogout(time:number){
+export function authLogout(time:number){
     return (dispatch:any) => {
         setTimeout(() => {
             dispatch(logout())
@@ -41,11 +42,29 @@ export function logout(){
     localStorage.removeItem('userId')
     localStorage.removeItem('expirationDate')
     return{
-        type:AUTH_LOGOUT
+        type: AUTH_LOGOUT
     }
 }
 
-export function authSuccess(token:any){
+export function authLogin(){
+    return (dispatch:any) => {
+        const token = localStorage.getItem('token')
+        if(!token){
+            dispatch(logout())
+        } else {
+            //@ts-ignore
+            const expirationDate = new Date(localStorage.getItem('expirationDate'))
+            if(expirationDate <= new Date()){
+                dispatch(logout())
+            } else {
+                dispatch(authSuccess(token))
+                dispatch(authLogout((expirationDate.getTime() - new Date().getTime()) /1000))
+            }
+        }
+    }
+}
+
+export function authSuccess(token:string){
     return{
         type: AUTH_SUCCESS,
         token

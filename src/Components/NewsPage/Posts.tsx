@@ -19,7 +19,7 @@ export const Posts = () => {
         axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=1919931b4e874852a0dc7c9ecafdfe37').then(({data}) => {
             dispatch(setNews(data))
         })
-    }, []);
+    }, [dispatch]);
 
         if(isLoaded){
     return news.map((news: any) => <Post news={news} key={news.id}/>).reverse()

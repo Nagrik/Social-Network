@@ -12,7 +12,6 @@ const FriendsPageContainer = (props:any) => {
 
     const selectAuthor = ({friends}:any) => friends.friend
     const friend = useSelector(selectAuthor)
-    console.log(friend)
 
     const selectLoading = ({friends}:any) => friends.isLoadedFriends
     const isLoadedProfile = useSelector(selectLoading)
@@ -22,7 +21,7 @@ const FriendsPageContainer = (props:any) => {
         axios.get(`https://social-network-31abc-default-rtdb.firebaseio.com/friends/${friendId}.json`).then(({data}) => {
             dispatch(setFriend(data))
         })
-    }, [])
+    }, [dispatch, friendId])
 
 
     return (
