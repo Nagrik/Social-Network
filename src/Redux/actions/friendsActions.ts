@@ -22,7 +22,6 @@ export const setFriends = (items: Array<any>): setFriendsType => ({
     type: SET_FRIENDS,
     payload: items
 })
-/////////////////////////
 type setLoadedFriendType = {
     type: typeof SET_LOADED_FRIEND,
     payload: boolean

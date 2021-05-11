@@ -30,7 +30,6 @@ export const friendsReducer = (state = initialState, action:FriendsActionType) =
                 friends: action.payload,
                 isLoadedFriends: true,
             }
-            //////////////
         case SET_LOADED_FRIEND:{
             return {
                 ...state,
